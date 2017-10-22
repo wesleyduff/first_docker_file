@@ -61,6 +61,13 @@ docker build -f <name of file> -t wesduff/node .
 Container linking
 - legacy linking
     - link one container to another container with names
+```javaScript
+docker run -d --name <name> <container>
+
+//link containers
+docker run -d -p 8080:3000 --link <name of linked container>:<internal alias> <container>
+```
+
 - Contaienr Linking
     - Adding containers to a bridge network
         - isolated network and only container in network can talk to eachother.
