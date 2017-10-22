@@ -60,8 +60,12 @@ docker build -f <name of file> -t wesduff/node .
 ### Communicate between containers
 Container linking
 - legacy linking
-    - link one container to another container
+    - link one container to another container with names
 - Contaienr Linking
+    - Adding containers to a bridge network
+        - isolated network and only container in network can talk to eachother.
+        - divide up networks 
+
 
 _Bridge Network (Container Network)_
 - node 
