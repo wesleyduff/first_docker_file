@@ -78,5 +78,33 @@ _Bridge Network (Container Network)_
 - node 
 - mongo
 
+### Building Services
+Have to create a docker-compose.yml file
+
+```javaScript
+//build docker files
+docker-compose build
+
+//example :
+docker-compose build mongo //will only build the mongo service
+
+//will start all services
+//before docker run -d --net=isolated_network --name nodeapp -p 3000:3000 wesduff/node
+
+//now : Create and start the containers
+docker-compose up
+
+//do not recreate services that node depends on
+//rebuild node image and stop, destroy and recreate node
+docker-compose up --no-deps node
+
+//tear down
+//docker-compose stop // will not delete the containers
+docker-compose down //remmoves them
+
+docker-compose down --rmi all --volumes //remove all images and volumns to stop and remove containers and all their images and volumes
+
+
+
 
 
