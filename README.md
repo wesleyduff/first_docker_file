@@ -104,7 +104,7 @@ docker-compose down //remmoves them
 
 docker-compose down --rmi all --volumes //remove all images and volumns to stop and remove containers and all their images and volumes
 
-
+```
 
 
 
