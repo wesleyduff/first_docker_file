@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+
+  node:
+    #sub properties
+    build:
+      #run from context where the yml file is located
+      context: .
+      #what docker file
+      dockerfile: node.dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      #same name as the network we defined below
+      - nodeapp-network
+  mongodb:
+    #base image on hub.docker.com
+    image: mongo
+    networks:
+      #same name as the network we defined below
+      - nodeapp-network
+
+networks:
+  #name
+  nodeapp-network:
+    #type of network
+    driver: bridge
